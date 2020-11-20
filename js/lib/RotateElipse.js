@@ -8,7 +8,7 @@ export const rotateElipse = (planetData,planetMeshData,angle)=>{
         const planet = planetData[i];
 
         const planetMesh = planetMeshData.find( p => {
-        console.log(planet['name'],p.geometry.name);
+        // console.log(planet['name'],p.geometry.name);
           return planet['name'] === p.geometry.name;
         });;
         planetMesh.position.z  = planet.radius * Math.cos(angle * (Math.PI/180)* planet.speed);

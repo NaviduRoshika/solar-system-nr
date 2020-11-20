@@ -8,11 +8,59 @@
         rotation:-0.15
     },
     {
+        name:'venus',
+        radius:900,
+        speed:4,
+        x:800,
+        z:800,
+        rotation:-0.25
+    },
+    {
         name:'earth',
-        radius:1200,
-        speed:0.56,
+        radius:1500,
+        speed:1.06,
         x:1200,
         z:800,
+        rotation:0.05
+    },
+    {
+        name:'mars',
+        radius:1800,
+        speed:0.96,
+        x:1400,
+        z:1400,
+        rotation:0.05
+    },
+    {
+        name:'jupitar',
+        radius:2100,
+        speed:0.76,
+        x:1600,
+        z:1600,
+        rotation:0.05
+    },
+    {
+        name:'saturn',
+        radius:2300,
+        speed:0.46,
+        x:1800,
+        z:1800,
+        rotation:0.05
+    },
+    {
+        name:'urenus',
+        radius:2500,
+        speed:0.36,
+        x:2000,
+        z:2000,
+        rotation:0.05
+    },
+    {
+        name:'neptune',
+        radius:12900,
+        speed:0.20,
+        x:12200,
+        z:2200,
         rotation:0.05
     }
 ];
