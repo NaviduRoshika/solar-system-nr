@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Solar System</title>
+        <style>
+            body{
+                margin: 0;
+
+            }
+            canvas{
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="js/lib/three.js"></script>
+        <script src="js/lib/RingGeometry.js"></script>
+        <script src="js/lib//OrbitControls.js"></script>
+        <script src="js/scene.js"></script>
+        <script src="js/stars/sun.js"></script> 
+        <script src="js/planets/earth/earth.js"></script>
+        <script src="js/planets/earth/earthBand.js"></script>
+        <script>
+            try {
+                camera.position.z = 500;
+                const cubeRenderTarget = new THREE.WebGLCubeRenderTarget( 128, { format: THREE.RGBFormat, generateMipmaps: true, minFilter: THREE.LinearMipmapLinearFilter } );
+                const cubeCamera = new THREE.CubeCamera( 1, 100000, cubeRenderTarget );
+                scene.add( cubeCamera );
+
+
+            function animate() {
+             requestAnimationFrame( animate );
+             sun.rotation.y += 0.01;
+             earth.rotation.y += 0.01;
+            //  earthBand.rotation.x += 0.05
+             console.log(earthBand.rotation.x);
+            //  console.log("I ran");
+             renderer.render( scene, camera);
+            }
+
+
+            animate();
+            } catch (error) {
+                console.log(error);
+            }
+            let angle = 100;
+            let radius = 600;
+
+            let update = function() {
+                // console.log("update ran");
+                var time = Date.now() * 0.0005;
+
+                // earth.position.x = Math.sin(time * 0.7) * 1300;
+                // earth.position.y = Math.cos(time * 0.5) * 1400;
+
+               earth.position.z  = radius * Math.cos(angle * (Math.PI/180));
+               earth.position.x  = radius * Math.sin(angle * (Math.PI/180));
+
+                // earth.position.z = Math.cos(time * 0.3) * 300;
+                // var time = Date.now() * 0.05;
+                // earth.position.x = 10000 * Math.sin(time * 2 * Math.PI); // x = ƒ(t)
+                // earth.position.y = Math.cos(time * 2 * Math.PI); // y = ƒ(t)
+                angle++;
+            }
+
+            var render = function(){
+                renderer.render(scene,camera);
+            }
+
+            var GameLoop = function(){
+                 requestAnimationFrame(GameLoop);
+                 update();
+                 render();
+            };
+
+            GameLoop();
+       
+        
+       
+       </script>
+    </body>
+</html>
