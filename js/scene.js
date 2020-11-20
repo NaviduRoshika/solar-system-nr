@@ -16,5 +16,7 @@ window.addEventListener('resize',function(){
 
 controls = new THREE.OrbitControls(camera,renderer.domElement);
 
+camera.position.z = 500;
+
 
 

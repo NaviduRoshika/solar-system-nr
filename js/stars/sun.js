@@ -8,9 +8,11 @@
 // const sphere = new THREE.Mesh( geometry, material );
 // scene.add( sphere );
 
+export let createSun = ()=>{
+    var sunGeometry = new THREE.SphereGeometry( 200, 20, 20 );
+    var sunMaterial = new THREE.MeshBasicMaterial( { map:new THREE.TextureLoader().load('js/stars/sun.jpg') , overdraw: 0.5 } );
+    var sun = new THREE.Mesh( sunGeometry, sunMaterial );
+    scene.add( sun);
+    return sun;
+}
 
-var sunGeometry = new THREE.SphereGeometry( 200, 20, 20 );
-
-var sunMaterial = new THREE.MeshBasicMaterial( { map:new THREE.TextureLoader().load('js/stars/sun.jpg') , overdraw: 0.5 } );
-var sun = new THREE.Mesh( sunGeometry, sunMaterial );
-scene.add( sun);
