@@ -9,8 +9,8 @@
 // scene.add( sphere );
 
 export let createSun = ()=>{
-    var sunGeometry = new THREE.SphereGeometry( 200, 20, 20 );
-    var sunMaterial = new THREE.MeshBasicMaterial( { map:new THREE.TextureLoader().load('js/stars/sun.jpg') , overdraw: 0.5 } );
+    var sunGeometry = new THREE.SphereGeometry( 15000, 32, 32 );
+    var sunMaterial = new THREE.MeshBasicMaterial( { map:new THREE.TextureLoader().load('js/stars/sun.jpg'),side:THREE.DoubleSide} );
     var sun = new THREE.Mesh( sunGeometry, sunMaterial );
     scene.add( sun);
     return sun;
