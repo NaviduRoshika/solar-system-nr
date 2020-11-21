@@ -3,8 +3,71 @@ export const planetBeltData = [
         name:"mercury",
         aX:0,
         aY:0,
-        xRadius:115600,
-        yRadius:115600,
+        xRadius:55000,
+        yRadius:29600,
+        aRotation:0,
+        xRotation:1.5
+    },
+    {
+        name:"venus",
+        aX:0,
+        aY:0,
+        xRadius:75000,
+        yRadius:48000,
+        aRotation:0,
+        xRotation:1.5
+    },
+    {
+        name:"earth",
+        aX:0,
+        aY:0,
+        xRadius:95000,
+        yRadius:59000,
+        aRotation:0,
+        xRotation:1.5
+    },
+    {
+        name:"mars",
+        aX:0,
+        aY:0,
+        xRadius:115000,
+        yRadius:77000,
+        aRotation:0,
+        xRotation:1.5
+    },
+    {
+        name:"jupitar",
+        aX:0,
+        aY:0,
+        xRadius:135000,
+        yRadius:87000,
+        aRotation:0,
+        xRotation:1.5
+    },
+    {
+        name:"saturn",
+        aX:0,
+        aY:0,
+        xRadius:165000,
+        yRadius:99000,
+        aRotation:0,
+        xRotation:1.5
+    },
+    {
+        name:"urenus",
+        aX:0,
+        aY:0,
+        xRadius:200000,
+        yRadius:120000,
+        aRotation:0,
+        xRotation:1.5
+    },
+    {
+        name:"neptune",
+        aX:0,
+        aY:0,
+        xRadius:252000,
+        yRadius:142000,
         aRotation:0,
         xRotation:1.5
     }
