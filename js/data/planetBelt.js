@@ -6,7 +6,7 @@ export const planetBeltData = [
         xRadius:55000,
         yRadius:29600,
         aRotation:0,
-        xRotation:1.5,
+        xRotation:1.56,
         color:0xff0000
     },
     {
@@ -16,7 +16,7 @@ export const planetBeltData = [
         xRadius:75000,
         yRadius:48000,
         aRotation:0,
-        xRotation:1.5,
+        xRotation:1.56,
         color:0xFFDD00
     },
     {
@@ -26,17 +26,17 @@ export const planetBeltData = [
         xRadius:95000,
         yRadius:59000,
         aRotation:0,
-        xRotation:1.5,
+        xRotation:1.56,
         color:0x03D600
     },
     {
         name:"mars",
         aX:0,
         aY:0,
-        xRadius:130000,
-        yRadius:77000,
+        xRadius:140000,
+        yRadius:75000,
         aRotation:0,
-        xRotation:1.5,
+        xRotation:1.56,
         color:0x0092D6
     },
     {
@@ -46,7 +46,7 @@ export const planetBeltData = [
         xRadius:185000,
         yRadius:89000,
         aRotation:0,
-        xRotation:1.5,
+        xRotation:1.56,
         color:0x850CB9
     },
     {
@@ -56,7 +56,7 @@ export const planetBeltData = [
         xRadius:230000,
         yRadius:109000,
         aRotation:0,
-        xRotation:1.5,
+        xRotation:1.56,
         color:0xF6F800
     },
     {
@@ -66,7 +66,7 @@ export const planetBeltData = [
         xRadius:260000,
         yRadius:140000,
         aRotation:0,
-        xRotation:1.5,
+        xRotation:1.56,
         color:0x1DB626 
     },
     {
@@ -76,7 +76,7 @@ export const planetBeltData = [
         xRadius:282000,
         yRadius:162000,
         aRotation:0,
-        xRotation:1.5,
+        xRotation:1.56,
         color:0xff0000
     }
 ];
