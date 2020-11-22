@@ -15,7 +15,7 @@ export const createPlanetBelt = ()=>{
         const points = curve.getPoints( 50 );
         const geometry = new THREE.BufferGeometry().setFromPoints( points );
         
-        const material = new THREE.LineBasicMaterial( { color : 0xff0000 } );
+        const material = new THREE.LineBasicMaterial( { color :belt.color } );
         
         // Create the final object to add to the scene
         const ellipse = new THREE.Line( geometry, material );

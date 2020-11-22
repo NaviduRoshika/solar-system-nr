@@ -1,5 +1,5 @@
 let scene = new THREE.Scene();
-let camera = new THREE.PerspectiveCamera(100,window.innerWidth/window.innerHeight,1,10000000);
+let camera = new THREE.PerspectiveCamera(50,window.innerWidth/window.innerHeight,1,10000000);
 var renderer = new THREE.WebGLRenderer();
 
 renderer.setSize(window.innerWidth,window.innerHeight);
@@ -16,7 +16,10 @@ window.addEventListener('resize',function(){
 
 controls = new THREE.OrbitControls(camera,renderer.domElement);
 
-camera.position.z = 500;
+// camera.position.z = 150000;
+camera.position.y = 150000;
+camera.position.x = 150000;
+
 
 
 
