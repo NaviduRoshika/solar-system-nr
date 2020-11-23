@@ -12,7 +12,10 @@ import { createSaturnRing } from "./js/planets/saturn/saturnRing.js";
     //     // console.log(element);
     // }
 
-    const planetMeshes = createPlanets();
+    const createPlanetsResult = createPlanets();
+    const planetMeshes = createPlanetsResult[0];
+    const planetsTextGroup = createPlanetsResult[1];
+    console.log(planetsTextGroup);
     const sun = createSun();
     createPlanetBelt();
     const saturnRing = createSaturnRing();
@@ -34,13 +37,9 @@ import { createSaturnRing } from "./js/planets/saturn/saturnRing.js";
   let radius = 600;
 
   let update = function () {
-      rotateElipse(planetData,planetMeshes,angle);
+    // rotateElipse(planetData,planetsTextGroup,angle);
     //    earth.position.z  = radius * Math.cos(angle * (Math.PI/180)*5) * 2;
     //    earth.position.x  = radius * Math.sin(angle * (Math.PI/180)*5) * 2;
-
-    //    mercury.position.z  = radius * Math.cos(angle * (Math.PI/180)*2) * 1;
-    //    mercury.position.x  = radius * Math.sin(angle * (Math.PI/180)*2) * 1;
-    
     angle++;
   };
 
@@ -68,18 +67,16 @@ import { createSaturnRing } from "./js/planets/saturn/saturnRing.js";
         //   stretchFactor = 1 + (Math.random() * 3);
         }
         // console.log(start);
-        progress = ((timestamp -planetData[p].start) / planetData[p].speed) / 1000; // percent
+        progress = ((timestamp - planetData[p].start) / planetData[p].speed) / 1000; // percent
         // console.log("spped",planetData[p].speed);
         x = stretchFactor * Math.sin(progress * 2 * Math.PI); // x = ƒ(t)
         y = Math.cos(progress * 2 * Math.PI); // y = ƒ(t)
-        // console.log("xy",x,y,stretchFactor,progress,duration);
-        // ball.style.left = maxX/2 + (gridSize * x) + "px";
-        // ball.style.bottom = maxY/2 + (gridSize * y) + "px";
-        planetMeshes[p].position.x = x * planetData[p].eRadiusX;
-        planetMeshes[p].position.z = y * planetData[p].eRadiusY;
-        // console.log(x,y);
-        // console.log(timestamp, x, y);
-
+      
+        // planetMeshes[p].position.x = x * planetData[p].eRadiusX;
+        // planetMeshes[p].position.z = y * planetData[p].eRadiusY;
+        planetsTextGroup[p].position.x = x * planetData[p].eRadiusX;
+        planetsTextGroup[p].position.z = y * planetData[p].eRadiusY;
+    
         if (progress >= 1) planetData[p].start = null; // reset to start position
         requestAnimationFrame(step);
         
@@ -87,6 +84,7 @@ import { createSaturnRing } from "./js/planets/saturn/saturnRing.js";
          step(); 
       }
 
+      // Saturn Ring
 
         var ringDuration = planetData[5].speed; // seconds
         var ringStart =  planetData[5].start;

@@ -12,7 +12,8 @@
         z:600,
         rotation:-0.15,
         start:1000,
-        stretchFactor:0.1
+        stretchFactor:0.1,
+        textY:4000
     },
     {
         name:'venus',
@@ -25,7 +26,8 @@
         z:800,
         rotation:-0.25,
         start:1000,
-        stretchFactor:0.1
+        stretchFactor:0.1,
+        textY:8000
     },
     {
         name:'earth',
@@ -38,7 +40,8 @@
         z:800,
         rotation:0.05,
         start:1000,
-        stretchFactor:0.1
+        stretchFactor:0.1,
+        textY:8000
     },
     {
         name:'mars',
@@ -51,7 +54,8 @@
         z:1400,
         rotation:0.05,
         start:1000,
-        stretchFactor:0.1
+        stretchFactor:0.1,
+        textY:4000
     },
     {
         name:'jupitar',
@@ -64,7 +68,8 @@
         z:1600,
         rotation:0.05,
         start:1000,
-        stretchFactor:0.1
+        stretchFactor:0.1,
+        textY:13800
     },
     {
         name:'saturn',
@@ -77,7 +82,8 @@
         z:1800,
         rotation:0.05,
         start:1000,
-        stretchFactor:0.1
+        stretchFactor:0.1,
+        textY:12000
     },
     {
         name:'urenus',
@@ -90,7 +96,8 @@
         z:2000,
         rotation:0.05,
         start:1000,
-        stretchFactor:0.1
+        stretchFactor:0.1,
+        textY:10000
     },
     {
         name:'neptune',
@@ -103,7 +110,8 @@
         z:2200,
         rotation:0.05,
         start:1000,
-        stretchFactor:0.1
+        stretchFactor:0.1,
+        textY:8000
     }
 ];
 
