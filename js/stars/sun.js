@@ -13,6 +13,36 @@ export let createSun = ()=>{
     var sunMaterial = new THREE.MeshBasicMaterial( { map:new THREE.TextureLoader().load('js/stars/sun.jpg'),side:THREE.DoubleSide} );
     var sun = new THREE.Mesh( sunGeometry, sunMaterial );
     scene.add( sun);
+    createSunLight();
     return sun;
 }
+
+
+const createSunLight = ()=>{
+    
+    const dimensions = [
+        [0,0,10000],
+        [0,0,-10000],
+        [10000,0,0],
+        [-10000,0,0]
+    ];
+
+    for (let i = 0; i < dimensions.length; i++) {
+        const xyz = dimensions[i];
+        
+        const spotLight = new THREE.SpotLight( 0xffffff,1.7,1000000);
+        spotLight.position.set( 0, 0, 0); 
+        scene.add( spotLight );
+        const spotLightHelper = new THREE.SpotLightHelper( spotLight );
+        scene.add( spotLightHelper );
+        const targetObject = new THREE.Object3D();
+        scene.add(targetObject);
+        spotLight.target = targetObject;
+        targetObject.position.set(xyz[0],xyz[1],xyz[2]);
+        
+    }
+    
+}
+
+
 

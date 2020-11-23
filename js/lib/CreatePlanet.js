@@ -4,6 +4,7 @@ import {planetData} from "../data/planetData.js";
 
 
 const planetMeshArray = [];
+const planetLights = [];
 const planetTextGroupArray = [];
 const loader = new THREE.FontLoader();
 
@@ -13,14 +14,23 @@ export let createPlanets = ()=>{
         const planetGeometry = new THREE.SphereGeometry(planet.planetRadius, 32, 32 );
         planetGeometry.name = planet.name;
         const materialPath = 'js/planets/' + planet.name +'/'+ planet.name +  '.jpg'; //'js/planets/earth/earth.jpg'
-        const planetMaterial = new THREE.MeshBasicMaterial({map:new THREE.TextureLoader().load(materialPath)});
+        const planetMaterial = new THREE.MeshLambertMaterial({map:new THREE.TextureLoader().load(materialPath)});
         const planetMesh = new THREE.Mesh(planetGeometry,planetMaterial);
+
+        // const spotLight = new THREE.SpotLight( 0xffffff,2.3,0,Math.PI / 3 );
+        // spotLight.position.set( 0, 0, 0);
+        // spotLight.target = planetMesh;
+        // scene.add(spotLight);
+        // const spotLightHelper = new THREE.SpotLightHelper( spotLight );
+        // scene.add( spotLightHelper );
+        // planetLights.push(spotLight);
+        // spotLightHelper.scale.set(1000,1000,1000);
     
         var nameTextMesh ;
         let group = new THREE.Group();
         const planetNameText = loader.load( 'js/fonts/helvetiker_regular.typeface.json', function ( font ) {
            nameTextMesh = createPlanetName(font,planet.name,planet.textY);
-           console.log("x1",nameTextMesh);
+        //    console.log("x1",nameTextMesh);
            scene.add(nameTextMesh)
            group.add(nameTextMesh);
         } );
@@ -29,12 +39,13 @@ export let createPlanets = ()=>{
         scene.add(group);
 
         // scene.add(planetMesh);
-        console.log("x2",nameTextMesh);
+        // console.log("x2",nameTextMesh);
         planetMeshArray.push(planetMesh);
         planetTextGroupArray.push(group);
-        console.log(group);
+        // console.log(group);
         planetMesh.position.x = planet.x; 
     }
+    console.log(planetLights);
     return [planetMeshArray,planetTextGroupArray];
 }
 

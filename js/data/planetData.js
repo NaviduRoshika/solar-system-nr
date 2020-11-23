@@ -1,4 +1,4 @@
- const earthYear =  15;
+ const earthYear =  5;
 
  export const planetData = [
     {
