@@ -23,18 +23,18 @@ const createSunLight = ()=>{
     const dimensions = [
         [0,0,10000],
         [0,0,-10000],
-        [10000,0,0],
-        [-10000,0,0]
+        // [10000,0,0],
+        // [-10000,0,0]
     ];
 
     for (let i = 0; i < dimensions.length; i++) {
         const xyz = dimensions[i];
         
-        const spotLight = new THREE.SpotLight( 0xffffff,1.7,1000000);
+        const spotLight = new THREE.SpotLight( 0xffffff,1.2,1000000,Math.PI/2);
         spotLight.position.set( 0, 0, 0); 
         scene.add( spotLight );
         const spotLightHelper = new THREE.SpotLightHelper( spotLight );
-        scene.add( spotLightHelper );
+        // scene.add( spotLightHelper );
         const targetObject = new THREE.Object3D();
         scene.add(targetObject);
         spotLight.target = targetObject;
