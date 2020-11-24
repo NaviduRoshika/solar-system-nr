@@ -18,7 +18,7 @@ window.addEventListener('resize',function(){
 
 controls = new THREE.OrbitControls(camera,renderer.domElement);
 
-controls.maxDistance = 900000;
+controls.maxDistance = 1100000;
 
 // controls.maxAzimuthAngle = Math.PI/3;
 // controls.minAzimuthAngle = -Math.PI/3; 

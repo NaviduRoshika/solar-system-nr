@@ -35,7 +35,7 @@ export class Sun{
         for (let i = 0; i < dimensions.length; i++) {
             const xyz = dimensions[i];
             
-            const spotLight = new THREE.SpotLight( 0xffffff,1.4,1000000,Math.PI/2);
+            const spotLight = new THREE.SpotLight( 0xffffff,1.4,10000000,Math.PI/2);
             spotLight.position.set( 0, 0, 0); 
             
             scene.add( spotLight );

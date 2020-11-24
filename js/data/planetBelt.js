@@ -1,10 +1,11 @@
+const scale = 1;
 export const planetBeltData = [
     {
         name:"mercury",
         aX:0,
         aY:0,
-        xRadius:55000,
-        yRadius:29600,
+        xRadius:55000*scale,
+        yRadius:29600*scale,
         aRotation:0,
         xRotation:1.56,
         color:0x4f0707
@@ -13,8 +14,8 @@ export const planetBeltData = [
         name:"venus",
         aX:0,
         aY:0,
-        xRadius:75000,
-        yRadius:48000,
+        xRadius:75000*scale,
+        yRadius:48000*scale,
         aRotation:0,
         xRotation:1.56,
         color:0x6e6a01
@@ -23,8 +24,8 @@ export const planetBeltData = [
         name:"earth",
         aX:0,
         aY:0,
-        xRadius:95000,
-        yRadius:59000,
+        xRadius:98000*scale,
+        yRadius:62000*scale,
         aRotation:0,
         xRotation:1.56,
         color:0x074f0b
@@ -33,8 +34,8 @@ export const planetBeltData = [
         name:"mars",
         aX:0,
         aY:0,
-        xRadius:140000,
-        yRadius:75000,
+        xRadius:140000*scale,
+        yRadius:75000*scale,
         aRotation:0,
         xRotation:1.56,
         color:0x0d1454
@@ -43,8 +44,8 @@ export const planetBeltData = [
         name:"jupitar",
         aX:0,
         aY:0,
-        xRadius:185000,
-        yRadius:89000,
+        xRadius:210000*scale,
+        yRadius:109000*scale,
         aRotation:0,
         xRotation:1.56,
         color:0x4c0d54
@@ -53,8 +54,8 @@ export const planetBeltData = [
         name:"saturn",
         aX:0,
         aY:0,
-        xRadius:230000,
-        yRadius:109000,
+        xRadius:260000*scale,
+        yRadius:140000*scale,
         aRotation:0,
         xRotation:1.56,
         color:0x6e6a01
@@ -63,8 +64,8 @@ export const planetBeltData = [
         name:"urenus",
         aX:0,
         aY:0,
-        xRadius:260000,
-        yRadius:140000,
+        xRadius:288000*scale,
+        yRadius:164000*scale,
         aRotation:0,
         xRotation:1.56,
         color:0x074f0b
@@ -73,8 +74,8 @@ export const planetBeltData = [
         name:"neptune",
         aX:0,
         aY:0,
-        xRadius:282000,
-        yRadius:162000,
+        xRadius:305000*scale,
+        yRadius:199900*scale,
         aRotation:0,
         xRotation:1.56,
         color:0x4f0707

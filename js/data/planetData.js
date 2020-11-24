@@ -1,13 +1,13 @@
- const earthYear =  5;
-
+ export const earthYear =  [7];
+ const scale = 1;
  export const planetData = [
     {
         name:'mercury',
         radius:600,
-        planetRadius:2400,    //2400
-        eRadiusX:550000,
-        eRadiusY:29600,
-        speed:0.25*earthYear,
+        planetRadius:2400*scale,    //2400
+        eRadiusX:550000*scale,
+        eRadiusY:29600*scale,
+        speed:0.25*earthYear[0],
         x:600,
         z:600,
         rotation:-0.15,
@@ -18,10 +18,10 @@
     {
         name:'venus',
         radius:900,
-        planetRadius:6050,          //6050
-        eRadiusX:750000,
-        eRadiusY:48000,
-        speed:0.65*earthYear,
+        planetRadius:6050*scale,          //6050
+        eRadiusX:750000*scale,
+        eRadiusY:48000*scale,
+        speed:0.65*earthYear[0],
         x:800,
         z:800,
         rotation:-0.25,
@@ -32,9 +32,9 @@
     {
         name:'earth',
         radius:1500,
-        planetRadius:6350,           //6350
-        eRadiusX:950000,
-        eRadiusY:59000,
+        planetRadius:6350*scale,           //6350
+        eRadiusX:980000*scale,
+        eRadiusY:62000*scale,
         speed:earthYear,
         x:1200,
         z:800,
@@ -46,10 +46,10 @@
     {
         name:'mars',
         radius:1800,
-        planetRadius:3350,            //3350
-        eRadiusX:1400000,
-        eRadiusY:77000,
-        speed:1.9*earthYear,
+        planetRadius:3350*scale,            //3350
+        eRadiusX:1400000*scale,
+        eRadiusY:77000*scale,
+        speed:1.9*earthYear[0],
         x:1400,
         z:1400,
         rotation:0.05,
@@ -60,10 +60,10 @@
     {
         name:'jupitar',
         radius:2100,
-        planetRadius:12600,           //66854
-        eRadiusX:1850000,
-        eRadiusY:89000,
-        speed:11.86 * earthYear,
+        planetRadius:12600*scale,           //66854
+        eRadiusX:2100000*scale,
+        eRadiusY:109000*scale,
+        speed:11.86 * earthYear[0],
         x:1600,
         z:1600,
         rotation:0.05,
@@ -74,10 +74,10 @@
     {
         name:'saturn',
         radius:2300,
-        planetRadius:10435,      //54350
-        eRadiusX:2300000,
-        eRadiusY:109000,
-        speed:(29.5-15) * earthYear,
+        planetRadius:10435*scale,      //54350
+        eRadiusX:2600000*scale,
+        eRadiusY:140000*scale,
+        speed:(29.5-15) * earthYear[0],
         x:1800,
         z:1800,
         rotation:0.05,
@@ -88,10 +88,10 @@
     {
         name:'urenus',
         radius:2500,
-        planetRadius:8800,           //25000
-        eRadiusX:2600000,
-        eRadiusY:140000,
-        speed:8.42 * earthYear,
+        planetRadius:8800*scale,           //25000
+        eRadiusX:2880000*scale,
+        eRadiusY:164000*scale,
+        speed:8.42 * earthYear[0],
         x:2000,
         z:2000,
         rotation:0.05,
@@ -102,10 +102,10 @@
     {
         name:'neptune',
         radius:12900,
-        planetRadius:7000,
-        eRadiusX:2800000,
-        eRadiusY:162000,
-        speed:16.4 * earthYear,
+        planetRadius:7000*scale,
+        eRadiusX:3090000*scale,
+        eRadiusY:200000*scale,
+        speed:16.4 * earthYear[0],
         x:12200,
         z:2200,
         rotation:0.05,
