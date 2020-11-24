@@ -2,7 +2,7 @@ import { planetMeshArray  } from "./js/data/planetMesh.js";
 import { planetData } from "./js/data/planetData.js"
 import { rotatePlanets } from "./js/lib/RotatePlanets.js";
 import { createPlanets } from "./js/lib/CreatePlanet.js";
-import { createSun } from "./js/stars/sun.js";
+import { Sun} from "./js/stars/sun.js";
 import { rotateElipse } from "./js/lib/RotateElipse.js";
 import { createPlanetBelt } from "./js/lib/CreatePlanetBelt.js";
 import { createSaturnRing } from "./js/planets/saturn/saturnRing.js";
@@ -13,11 +13,17 @@ import { createUniverse } from "./js/stars/universe/universe.js";
     //     // console.log(element);
     // }
 
+  
+    const sunInstance = new Sun();
+
     const createPlanetsResult = createPlanets();
     const planetMeshes = createPlanetsResult[0];
     const planetsTextGroup = createPlanetsResult[1];
-    console.log(planetsTextGroup);
-    const sun = createSun();
+    // console.log(planetsTextGroup);
+   
+    const sun = sunInstance.createSun();
+    sunInstance.createSunLight();
+
     createPlanetBelt();
     createUniverse();
     const saturnRing = createSaturnRing();
@@ -66,16 +72,13 @@ import { createUniverse } from "./js/stars/universe/universe.js";
         var progress, x, y;
         if (planetData[p].start === null) {
           planetData[p].start = timestamp;
-        //   stretchFactor = 1 + (Math.random() * 3);
         }
-        // console.log(start);
+    
         progress = ((timestamp - planetData[p].start) / planetData[p].speed) / 1000; // percent
-        // console.log("spped",planetData[p].speed);
         x = stretchFactor * Math.sin(progress * 2 * Math.PI); // x = ƒ(t)
         y = Math.cos(progress * 2 * Math.PI); // y = ƒ(t)
       
-        // planetMeshes[p].position.x = x * planetData[p].eRadiusX;
-        // planetMeshes[p].position.z = y * planetData[p].eRadiusY;
+
         planetsTextGroup[p].position.x = x * planetData[p].eRadiusX;
         planetsTextGroup[p].position.z = y * planetData[p].eRadiusY;
     
@@ -111,3 +114,39 @@ import { createUniverse } from "./js/stars/universe/universe.js";
         
       }
         ringEllispe(); 
+
+
+
+      //EVENT LISTNERS
+      const menuClicked =()=>{
+        console.log(" i called ");
+        var x = document.getElementById("button-div");
+           if (x.style.display === "none") {
+           x.style.display = "block";
+        } else {
+           x.style.display = "none";
+         }
+        
+        }
+      
+      const menuButton = document.getElementById("menu-button");
+      menuButton.addEventListener('click',menuClicked);
+      
+      let isLightOn = true;
+      const onLightSwitch = ()=>{
+        if(isLightOn){
+          sunInstance.sunlightAmbientOff();
+          isLightOn = false;
+        }else{
+          sunInstance.sunlightAmbientOn();
+          isLightOn = true;
+        }
+      }
+
+      const lightSwitchButton = document.getElementById("light-button");
+      lightSwitchButton.addEventListener('click',onLightSwitch);
+
+
+
+
+        

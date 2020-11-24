@@ -45,12 +45,14 @@ controls.mouseButtons = {
 }
 
 const helper = new THREE.CameraHelper( camera );
-scene.add( helper );
+// scene.add( helper );
 
 
 camera.position.x = 0;
 camera.position.y = 100000;
 camera.position.z = 800000;
+
+
 
 
 

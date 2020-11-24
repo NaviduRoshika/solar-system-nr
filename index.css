@@ -1,0 +1,10 @@
+.menu-div{
+    background-color: aqua;
+    position: fixed;
+    top: 0;
+}
+
+#button-div{
+    display:none;
+    background-color: red;
+}
