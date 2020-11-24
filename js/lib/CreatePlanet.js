@@ -14,7 +14,7 @@ export let createPlanets = ()=>{
         const planetGeometry = new THREE.SphereGeometry(planet.planetRadius, 32, 32 );
         planetGeometry.name = planet.name;
         const materialPath = 'js/planets/' + planet.name +'/'+ planet.name +  '.jpg'; //'js/planets/earth/earth.jpg'
-        const planetMaterial = new THREE.MeshLambertMaterial({map:new THREE.TextureLoader().load(materialPath)});
+        const planetMaterial = new THREE.MeshPhongMaterial({map:new THREE.TextureLoader().load(materialPath)});
         const planetMesh = new THREE.Mesh(planetGeometry,planetMaterial);
 
         // const spotLight = new THREE.SpotLight( 0xffffff,2.3,0,Math.PI / 3 );

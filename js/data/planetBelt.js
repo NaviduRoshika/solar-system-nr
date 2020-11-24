@@ -7,7 +7,7 @@ export const planetBeltData = [
         yRadius:29600,
         aRotation:0,
         xRotation:1.56,
-        color:0xff0000
+        color:0x4f0707
     },
     {
         name:"venus",
@@ -17,7 +17,7 @@ export const planetBeltData = [
         yRadius:48000,
         aRotation:0,
         xRotation:1.56,
-        color:0xFFDD00
+        color:0x6e6a01
     },
     {
         name:"earth",
@@ -27,7 +27,7 @@ export const planetBeltData = [
         yRadius:59000,
         aRotation:0,
         xRotation:1.56,
-        color:0x03D600
+        color:0x074f0b
     },
     {
         name:"mars",
@@ -37,7 +37,7 @@ export const planetBeltData = [
         yRadius:75000,
         aRotation:0,
         xRotation:1.56,
-        color:0x0092D6
+        color:0x0d1454
     },
     {
         name:"jupitar",
@@ -47,7 +47,7 @@ export const planetBeltData = [
         yRadius:89000,
         aRotation:0,
         xRotation:1.56,
-        color:0x850CB9
+        color:0x4c0d54
     },
     {
         name:"saturn",
@@ -57,7 +57,7 @@ export const planetBeltData = [
         yRadius:109000,
         aRotation:0,
         xRotation:1.56,
-        color:0xF6F800
+        color:0x6e6a01
     },
     {
         name:"urenus",
@@ -67,7 +67,7 @@ export const planetBeltData = [
         yRadius:140000,
         aRotation:0,
         xRotation:1.56,
-        color:0x1DB626 
+        color:0x074f0b
     },
     {
         name:"neptune",
@@ -77,6 +77,6 @@ export const planetBeltData = [
         yRadius:162000,
         aRotation:0,
         xRotation:1.56,
-        color:0xff0000
+        color:0x4f0707
     }
 ];

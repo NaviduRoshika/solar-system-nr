@@ -6,6 +6,7 @@ import { createSun } from "./js/stars/sun.js";
 import { rotateElipse } from "./js/lib/RotateElipse.js";
 import { createPlanetBelt } from "./js/lib/CreatePlanetBelt.js";
 import { createSaturnRing } from "./js/planets/saturn/saturnRing.js";
+import { createUniverse } from "./js/stars/universe/universe.js";
 
     // for (let index = 0; index < planetData.length; index++) {
     //     const element = planetData[index];
@@ -18,6 +19,7 @@ import { createSaturnRing } from "./js/planets/saturn/saturnRing.js";
     console.log(planetsTextGroup);
     const sun = createSun();
     createPlanetBelt();
+    createUniverse();
     const saturnRing = createSaturnRing();
     
 

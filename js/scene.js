@@ -14,7 +14,36 @@ window.addEventListener('resize',function(){
     camera.updateProjectionMatrix();
 });
 
+
+
 controls = new THREE.OrbitControls(camera,renderer.domElement);
+
+controls.maxDistance = 900000;
+
+// controls.maxAzimuthAngle = Math.PI/3;
+// controls.minAzimuthAngle = -Math.PI/3; 
+
+// controls.maxPolarAngle = Math.PI /3;
+
+var minPan = new THREE.Vector3( - 200000, - 200000, - 200000 );
+var maxPan = new THREE.Vector3( 200000, 200000, 200000);
+var _v = new THREE.Vector3();
+
+controls.addEventListener("change", function() {
+    _v.copy(controls.target);
+    console.log("ct",controls.target);
+    controls.target.clamp(minPan, maxPan);
+    _v.sub(controls.target);
+    camera.position.sub(_v);
+})
+
+
+controls.mouseButtons = {
+	LEFT: THREE.MOUSE.ROTATE,
+	MIDDLE: THREE.MOUSE.DOLLY,
+	RIGHT: THREE.MOUSE.PAN
+}
+
 const helper = new THREE.CameraHelper( camera );
 scene.add( helper );
 
@@ -22,6 +51,7 @@ scene.add( helper );
 camera.position.x = 0;
 camera.position.y = 100000;
 camera.position.z = 800000;
+
 
 
 // const loader = new THREE.FontLoader();
