@@ -17,7 +17,7 @@ export class Sun{
 
     createSun =()=>{
         var sunGeometry = new THREE.SphereGeometry( 22000, 32, 32 );
-        var sunMaterial = new THREE.MeshBasicMaterial( { map:new THREE.TextureLoader().load('js/stars/sun.jpg'),side:THREE.DoubleSide} );
+        var sunMaterial = new THREE.MeshBasicMaterial( { map:new THREE.TextureLoader(LOADING_MANAGER).load('js/stars/sun.jpg'),side:THREE.DoubleSide} );
         this.sun = new THREE.Mesh( sunGeometry, sunMaterial );
         scene.add( this.sun);
         // createSunLight();

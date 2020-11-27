@@ -15,7 +15,6 @@ import { createUniverse } from "./js/stars/universe/universe.js";
 
   
     const sunInstance = new Sun();
-
     const createPlanetsResult = createPlanets();
     const planetMeshes = createPlanetsResult[0];
     const planetsTextGroup = createPlanetsResult[1];
@@ -30,31 +29,62 @@ import { createUniverse } from "./js/stars/universe/universe.js";
     createUniverse();
     const saturnRing = createSaturnRing();
     
+    THREE.DefaultLoadingManager.onLoad = function ( ) {
+      setInterval(() => {
+        RESOURCES_LOAD = true;
+      }, 2000);
+      
+      console.log( 'Loading Complete!');
+    
+    };
 
-    function animate() {
+    THREE.DefaultLoadingManager.onProgress = function ( url, itemsLoaded, itemsTotal ) {
 
-      rotatePlanets(planetData,planetMeshes);
-      sun.rotation.y += 0.01;
-    //   earth.rotation.y += 0.01;
-      requestAnimationFrame(animate);
-      renderer.render(scene, camera);
-    }
+      console.log( 'Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
+    
+    };
+    
+    // function animate() {
+    //   if(RESOURCES_LOAD == false){
+    //     requestAnimationFrame(animate);
+    //     console.log(" I called");
+    //     renderer.render(loadingScreen.scene,loadingScreen.camera);
+    //     return;
+    //   }
+    //   rotatePlanets(planetData,planetMeshes);
+    //   sun.rotation.y += 0.01;
+    // //   earth.rotation.y += 0.01;
+    //   requestAnimationFrame(animate);
+    //   // renderer.render(scene, camera);
+    // }
 
-    animate();
-
-
-  let angle = 10000;
-  let radius = 600;
+    // animate();
+  let radius = 1;
+  let angle = 1;
 
   let update = function () {
-    // rotateElipse(planetData,planetsTextGroup,angle);
-    //    earth.position.z  = radius * Math.cos(angle * (Math.PI/180)*5) * 2;
-    //    earth.position.x  = radius * Math.sin(angle * (Math.PI/180)*5) * 2;
-    angle++;
+    
+    if(RESOURCES_LOAD){
+      rotatePlanets(planetData,planetMeshes);
+      sun.rotation.y += 0.01;
+    }else{
+        //  loadingScreen.orbit.rotation.x += 0.3;
+        //  loadingScreen.orbit.rotation.x += 0.3;
+         loadingScreen.moon.position.y  = radius * Math.cos(angle * (Math.PI/180)*5) * 2;
+         loadingScreen.moon.position.x  = radius * Math.sin(angle * (Math.PI/180)*5) * 2;
+         angle++;
+    }
+   
+   
   };
 
   var render = function () {
-    renderer.render(scene, camera);
+    if(RESOURCES_LOAD){
+      renderer.render(scene, camera);
+    }else{
+      renderer.render(loadingScreen.scene,loadingScreen.camera);
+    }
+   
   };
 
   var GameLoop = function () {
@@ -185,4 +215,5 @@ import { createUniverse } from "./js/stars/universe/universe.js";
 
 
 
-        
+    //    earth.position.z  = radius * Math.cos(angle * (Math.PI/180)*5) * 2;
+    //    earth.position.x  = radius * Math.sin(angle * (Math.PI/180)*5) * 2;
