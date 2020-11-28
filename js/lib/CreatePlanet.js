@@ -29,7 +29,7 @@ export let createPlanets = ()=>{
         var nameTextMesh ;
         let group = new THREE.Group();
         const planetNameText = loader.load( 'js/fonts/helvetiker_regular.typeface.json', function ( font ) {
-           nameTextMesh = createPlanetName(font,planet.name,planet.textY);
+           nameTextMesh = createPlanetName(font,planet.name.toUpperCase(),planet.textY);
         //    console.log("x1",nameTextMesh);
            scene.add(nameTextMesh)
            group.add(nameTextMesh);

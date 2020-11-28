@@ -8,6 +8,26 @@
 // const sphere = new THREE.Mesh( geometry, material );
 // scene.add( sphere );
 
+const fontLoader = new THREE.FontLoader();
+
+const createTempText = (font,temp) =>{
+    const geometry = new THREE.TextGeometry(temp, {
+        font: font,
+        size: 3000,
+        height: 500,
+        curveSegments: 12,
+        bevelEnabled: true,
+        bevelThickness: 10,
+        bevelSize: 8,
+        bevelOffset: 0,
+        bevelSegments: 5
+    } );
+    const material = new THREE.MeshBasicMaterial({color:0xffffff});
+    const nameTextMesh = new THREE.Mesh(geometry,material);
+    nameTextMesh.position.x = -6000; 
+    return nameTextMesh;
+}
+
 export class Sun{
     constructor(){
         this.sun = null;
@@ -20,6 +40,13 @@ export class Sun{
         var sunMaterial = new THREE.MeshBasicMaterial( { map:new THREE.TextureLoader(LOADING_MANAGER).load('js/stars/sun.jpg'),side:THREE.DoubleSide} );
         this.sun = new THREE.Mesh( sunGeometry, sunMaterial );
         scene.add( this.sun);
+        
+        const temperature = '27M Celsius';
+
+        fontLoader.load( 'js/fonts/helvetiker_regular.typeface.json', function ( font ) {
+           const  nameTextMesh = createTempText(font,temperature);
+            scene.add(nameTextMesh);
+         } );
         // createSunLight();
         return this.sun;
     }
@@ -82,10 +109,12 @@ export class Sun{
         }
         this.ambientLight.visible = true;
     }
-    
-    
+
+
 
 }
+
+
 
 // export let createSun = ()=>{
 //     var sunGeometry = new THREE.SphereGeometry( 22000, 32, 32 );

@@ -12,10 +12,10 @@ export const createPlanetBelt = ()=>{
             belt.aRotation           // aRotation
         );
         
-        const points = curve.getPoints( 50 );
+        const points = curve.getPoints( 5000 );
         const geometry = new THREE.BufferGeometry().setFromPoints( points );
         
-        const material = new THREE.LineBasicMaterial( { color :belt.color } );
+        const material = new THREE.LineBasicMaterial( { color :belt.color , linewidth:2} );
         
         // Create the final object to add to the scene
         const ellipse = new THREE.Line( geometry, material );

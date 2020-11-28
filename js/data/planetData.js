@@ -1,4 +1,4 @@
- export const earthYear =  [7];
+ export const earthYear =  [8];
  const scale = 1;
  export const planetData = [
     {
@@ -48,7 +48,7 @@
         radius:1800,
         planetRadius:3350*scale,            //3350
         eRadiusX:1400000*scale,
-        eRadiusY:77000*scale,
+        eRadiusY:85000*scale,
         speed:1.9*earthYear[0],
         x:1400,
         z:1400,
@@ -61,8 +61,8 @@
         name:'jupitar',
         radius:2100,
         planetRadius:12600*scale,           //66854
-        eRadiusX:2100000*scale,
-        eRadiusY:109000*scale,
+        eRadiusX:2000000*scale,
+        eRadiusY:105000*scale,
         speed:11.86 * earthYear[0],
         x:1600,
         z:1600,
@@ -101,12 +101,12 @@
     },
     {
         name:'neptune',
-        radius:12900,
+        radius:2500,
         planetRadius:7000*scale,
-        eRadiusX:3090000*scale,
-        eRadiusY:200000*scale,
+        eRadiusX:3300000*scale,
+        eRadiusY:194000*scale,
         speed:16.4 * earthYear[0],
-        x:12200,
+        x:2200,
         z:2200,
         rotation:0.05,
         start:1000,

@@ -35,7 +35,7 @@ export const planetBeltData = [
         aX:0,
         aY:0,
         xRadius:140000*scale,
-        yRadius:75000*scale,
+        yRadius:85000*scale,
         aRotation:0,
         xRotation:1.56,
         color:0x0d1454
@@ -44,8 +44,8 @@ export const planetBeltData = [
         name:"jupitar",
         aX:0,
         aY:0,
-        xRadius:210000*scale,
-        yRadius:109000*scale,
+        xRadius:200000*scale,
+        yRadius:105000*scale,
         aRotation:0,
         xRotation:1.56,
         color:0x4c0d54
@@ -74,8 +74,8 @@ export const planetBeltData = [
         name:"neptune",
         aX:0,
         aY:0,
-        xRadius:305000*scale,
-        yRadius:199900*scale,
+        xRadius:330000*scale,
+        yRadius:194000*scale,
         aRotation:0,
         xRotation:1.56,
         color:0x4f0707
