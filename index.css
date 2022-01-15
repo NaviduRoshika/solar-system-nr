@@ -1,13 +1,42 @@
 .menu-div{
-    background-color: aqua;
+    background-color: rgba(0, 255, 255, 0);
     position: fixed;
     top: 0;
 }
 
 #button-div{
     display:none;
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0);
 }
+
+.loading-text{
+    border: 5px solid #FFFF00;
+    display: flex;
+    /* justify-content: center; */
+    margin-top: 5px;
+    width: 100px;
+}
+
+.parent {
+    height: 100vh;
+    width: 100vw;
+    background: #cccccc00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.child {
+    background-color: #ffff0000;
+    color: azure;
+    width: 230px;
+    height: 50px;
+    margin-top: 35%;
+    margin-left: 10px;
+    font-size:x-large;
+}
+
+
 
 #light-button{
     width: 6vw;

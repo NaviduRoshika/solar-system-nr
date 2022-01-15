@@ -1,3 +1,5 @@
+const loader = new THREE.FontLoader();
+
 let loadingScreen = {
     scene : new THREE.Scene(),
     camera: new THREE.PerspectiveCamera(60,window.innerWidth/window.innerHeight,1,10000),
@@ -16,6 +18,8 @@ let loadingScreen = {
 };
 
 let RESOURCES_LOAD = false;
+let nameTextMesh ;
+
 
 loadingScreen.moon.position.set(0,0,10);
 loadingScreen.planet.position.set(0,0,10);
@@ -29,9 +33,12 @@ loadingScreen.scene.add(loadingScreen.moon);
 loadingScreen.scene.add(loadingScreen.planet);
 loadingScreen.scene.add(loadingScreen.orbit);
 
-console.log('I came',loadingScreen.planet);
+// loader.load( 'js/fonts/helvetiker_regular.typeface.json', function ( font ) {
+//     nameTextMesh = createPlanetName(font,"Loading Universe...".toUpperCase(),4000);
+//     loadingScreen.scene.add(nameTextMesh)
+//     // group.add(nameTextMesh);
+//  });
+
+// console.log('I came',loadingScreen.planet);
 
 let LOADING_MANAGER = THREE.LoadingManager();
-
-
-

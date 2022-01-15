@@ -8,6 +8,7 @@ import { createPlanetBelt } from "./js/lib/CreatePlanetBelt.js";
 import { createSaturnRing } from "./js/planets/saturn/saturnRing.js";
 import { createUniverse } from "./js/stars/universe/universe.js";
 
+let loadingNames = ["Mercury","Venus","Earth","Mars","Jupitar","Saturn","Urenus","Neptune","Sun","Sun","Universe"]
     // for (let index = 0; index < planetData.length; index++) {
     //     const element = planetData[index];
     //     // console.log(element);
@@ -20,7 +21,6 @@ import { createUniverse } from "./js/stars/universe/universe.js";
     const planetsTextGroup = createPlanetsResult[1];
 
     let requestAnimationFrameArray = [];
-    // console.log(planetsTextGroup);
    
     const sun = sunInstance.createSun();
     sunInstance.createSunLight();
@@ -31,17 +31,16 @@ import { createUniverse } from "./js/stars/universe/universe.js";
     
     THREE.DefaultLoadingManager.onLoad = function ( ) {
       setInterval(() => {
+        document.getElementById("child").style.display = 'none';
         RESOURCES_LOAD = true;
       }, 2000);
       
       console.log( 'Loading Complete!');
-    
     };
 
     THREE.DefaultLoadingManager.onProgress = function ( url, itemsLoaded, itemsTotal ) {
-
       console.log( 'Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
-    
+      document.getElementById("child").innerHTML = "Loading " + loadingNames[itemsLoaded - 1] + " ...🚀";
     };
     
     // function animate() {
@@ -59,6 +58,7 @@ import { createUniverse } from "./js/stars/universe/universe.js";
     // }
 
     // animate();
+
   let radius = 1;
   let angle = 1;
 
@@ -84,7 +84,6 @@ import { createUniverse } from "./js/stars/universe/universe.js";
     }else{
       renderer.render(loadingScreen.scene,loadingScreen.camera);
     }
-   
   };
 
   var GameLoop = function () {
