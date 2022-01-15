@@ -31,7 +31,7 @@ let loadingNames = ["Mercury","Venus","Earth","Mars","Jupitar","Saturn","Urenus"
     
     THREE.DefaultLoadingManager.onLoad = function ( ) {
       setInterval(() => {
-        document.getElementById("child").style.display = 'none';
+        document.getElementById("parent").style.display = 'none';
         RESOURCES_LOAD = true;
       }, 2000);
       
